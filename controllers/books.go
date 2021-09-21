@@ -61,10 +61,13 @@ func SaveBookController(echoContext echo.Context) error {
 }
 
 func UpdateBookbyIDController(echoContext echo.Context) error {
+
+	id, _ := strconv.Atoi(echoContext.Param("id"))
+
 	var bookReq models.Book
 	echoContext.Bind(&bookReq)
 
-	result, err := database.UpdateBook(bookReq)
+	result, err := database.UpdateBook(id, bookReq)
 	if err != nil {
 		return echoContext.JSON(http.StatusInternalServerError, map[string]interface{}{
 			"status":   "err",

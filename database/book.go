@@ -34,8 +34,9 @@ func StoreBook(book models.Book) (*models.Book, error) {
 	return &book, nil
 }
 
-func UpdateBook(book models.Book) (*models.Book, error) {
-	if err := config.DB.Where("id = ?", book.ID).Updates(&book).Error; err != nil {
+func UpdateBook(id int, book models.Book) (*models.Book, error) {
+
+	if err := config.DB.Where("id = ?", id).Updates(&book).Error; err != nil {
 		return &models.Book{}, err
 	}
 
