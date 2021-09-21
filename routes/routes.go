@@ -10,6 +10,7 @@ func NewRoutes() *echo.Echo {
 
 	echoInit.GET("/article", controllers.GetArticleController)
 	echoInit.POST("/article", controllers.SaveArticleController)
-
+	// echoInit.PUT("/article/:id", controllers.UpdateArticleController)
+	// echoInit.DELETE("/article/:id", controllers.DeleteArticleController)
 	return echoInit
 }

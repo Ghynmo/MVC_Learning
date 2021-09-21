@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"net/http"
+	// "strconv"
 
 	"github.com/ghynmo/MVC_Learning/database"
 	"github.com/ghynmo/MVC_Learning/models"
@@ -40,3 +41,22 @@ func SaveArticleController(echoContext echo.Context) error {
 		"data":   result,
 	})
 }
+
+// func UpdateArticleController(echoContext echo.Context) error {
+// 	id, _ := strconv.Atoi(echoContext.Param("id"))
+
+// 	var articleReq models.Article
+// 	echoContext.Bind(&articleReq)
+
+// 	result, err := database.Update(articleReq)
+// 	if err != nil {
+// 		return echoContext.JSON(http.StatusInternalServerError, map[string]interface{}{
+// 			"status":   "err",
+// 			"messages": err,
+// 		})
+// 	}
+// 	return echoContext.JSON(http.StatusOK, map[string]interface{}{
+// 		"status": "success",
+// 		"data":   result,
+// 	})
+// }
