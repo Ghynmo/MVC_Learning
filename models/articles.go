@@ -1,9 +1,9 @@
 package models
 
-import "gorm.io/gorm"
+// import "gorm.io/gorm"
 
-type Article struct {
-	gorm.Model
-	Title  string `json:"title"`
-	Author string `json:"author"`
-}
+// type Article struct {
+// 	gorm.Model
+// 	Title  string `json:"title"`
+// 	Author string `json:"author"`
+// }

@@ -8,10 +8,10 @@ import (
 func NewRoutes() *echo.Echo {
 	echoInit := echo.New()
 
-	echoInit.GET("/article", controllers.GetArticleController)
-	echoInit.GET("/article/:id", controllers.GetArticlebyIDController)
-	echoInit.POST("/article", controllers.SaveArticleController)
-	echoInit.PUT("/article/:id", controllers.UpdateArticlebyIDController)
-	echoInit.DELETE("/article/:id", controllers.DeleteArticlebyIDController)
+	echoInit.GET("/books", controllers.GetBookController)
+	echoInit.GET("/book/:id", controllers.GetBookbyIDController)
+	echoInit.POST("/book", controllers.SaveBookController)
+	echoInit.PUT("/book/:id", controllers.UpdateBookbyIDController)
+	echoInit.DELETE("/book/:id", controllers.DeleteBookbyIDController)
 	return echoInit
 }

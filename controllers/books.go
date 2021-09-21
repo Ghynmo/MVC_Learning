@@ -9,9 +9,9 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func GetArticleController(echoContext echo.Context) error {
+func GetBookController(echoContext echo.Context) error {
 
-	articles, err := database.GetArticles()
+	books, err := database.GetBooks()
 	if err != nil {
 		return echoContext.JSON(http.StatusInternalServerError, map[string]interface{}{
 			"status":   "err",
@@ -21,15 +21,15 @@ func GetArticleController(echoContext echo.Context) error {
 
 	return echoContext.JSON(http.StatusOK, map[string]interface{}{
 		"status": "success",
-		"data":   articles,
+		"data":   books,
 	})
 }
 
-func GetArticlebyIDController(echoContext echo.Context) error {
+func GetBookbyIDController(echoContext echo.Context) error {
 
 	id, _ := strconv.Atoi(echoContext.Param("id"))
 
-	articles, err := database.GetbyIDArticle(id)
+	books, err := database.GetbyIDBook(id)
 	if err != nil {
 		return echoContext.JSON(http.StatusInternalServerError, map[string]interface{}{
 			"status":   "err",
@@ -39,15 +39,15 @@ func GetArticlebyIDController(echoContext echo.Context) error {
 
 	return echoContext.JSON(http.StatusOK, map[string]interface{}{
 		"status": "success",
-		"data":   articles,
+		"data":   books,
 	})
 }
 
-func SaveArticleController(echoContext echo.Context) error {
-	var articleReq models.Article
-	echoContext.Bind(&articleReq)
+func SaveBookController(echoContext echo.Context) error {
+	var bookReq models.Book
+	echoContext.Bind(&bookReq)
 
-	result, err := database.StoreArticle(articleReq)
+	result, err := database.StoreBook(bookReq)
 	if err != nil {
 		return echoContext.JSON(http.StatusInternalServerError, map[string]interface{}{
 			"status":   "err",
@@ -60,11 +60,11 @@ func SaveArticleController(echoContext echo.Context) error {
 	})
 }
 
-func UpdateArticlebyIDController(echoContext echo.Context) error {
-	var articleReq models.Article
-	echoContext.Bind(&articleReq)
+func UpdateBookbyIDController(echoContext echo.Context) error {
+	var bookReq models.Book
+	echoContext.Bind(&bookReq)
 
-	result, err := database.Update(articleReq)
+	result, err := database.UpdateBook(bookReq)
 	if err != nil {
 		return echoContext.JSON(http.StatusInternalServerError, map[string]interface{}{
 			"status":   "err",
@@ -77,11 +77,11 @@ func UpdateArticlebyIDController(echoContext echo.Context) error {
 	})
 }
 
-func DeleteArticlebyIDController(echoContext echo.Context) error {
+func DeleteBookbyIDController(echoContext echo.Context) error {
 
 	id, _ := strconv.Atoi(echoContext.Param("id"))
 
-	articles, err := database.Delete(id)
+	books, err := database.DeleteBook(id)
 	if err != nil {
 		return echoContext.JSON(http.StatusInternalServerError, map[string]interface{}{
 			"status":   "err",
@@ -91,6 +91,6 @@ func DeleteArticlebyIDController(echoContext echo.Context) error {
 
 	return echoContext.JSON(http.StatusOK, map[string]interface{}{
 		"status": "success",
-		"data":   articles,
+		"data":   books,
 	})
 }
