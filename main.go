@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/rachmankamil/kampus-merdeka-b/config"
-	"github.com/rachmankamil/kampus-merdeka-b/routes"
+	"github.com/ghynmo/MVC_Learning/config"
+	"github.com/ghynmo/MVC_Learning/routes"
 )
 
 func main() {

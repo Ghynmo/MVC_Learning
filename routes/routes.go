@@ -1,8 +1,8 @@
 package routes
 
 import (
+	"github.com/ghynmo/MVC_Learning/controllers"
 	"github.com/labstack/echo/v4"
-	"github.com/rachmankamil/kampus-merdeka-b/controllers"
 )
 
 func NewRoutes() *echo.Echo {

@@ -3,9 +3,9 @@ package controllers
 import (
 	"net/http"
 
+	"github.com/ghynmo/MVC_Learning/database"
+	"github.com/ghynmo/MVC_Learning/models"
 	"github.com/labstack/echo/v4"
-	"github.com/rachmankamil/kampus-merdeka-b/lib/database"
-	"github.com/rachmankamil/kampus-merdeka-b/models"
 )
 
 func GetArticleController(echoContext echo.Context) error {

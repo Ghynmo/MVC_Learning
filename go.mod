@@ -1,7 +1,4 @@
-module (
-	github.com/rachmankamil/kampus-merdeka-b
-	github.com/ghynmo/MVC_Learning
-)
+module github.com/ghynmo/MVC_Learning
 
 go 1.16
 

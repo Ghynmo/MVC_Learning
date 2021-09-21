@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/rachmankamil/kampus-merdeka-b/models"
+	"github.com/ghynmo/MVC_Learning/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

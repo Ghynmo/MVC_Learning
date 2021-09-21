@@ -1,8 +1,8 @@
 package database
 
 import (
-	"github.com/rachmankamil/kampus-merdeka-b/config"
-	"github.com/rachmankamil/kampus-merdeka-b/models"
+	"github.com/ghynmo/MVC_Learning/config"
+	"github.com/ghynmo/MVC_Learning/models"
 )
 
 func GetArticles() (*[]models.Article, error) {
