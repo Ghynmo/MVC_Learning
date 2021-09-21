@@ -35,7 +35,17 @@ func StoreArticle(article models.Article) (*models.Article, error) {
 }
 
 func Update(article models.Article) (*models.Article, error) {
-	if err := config.DB.Updates(&article).Error; err != nil {
+	if err := config.DB.Where("id = ?", article.ID).Updates(&article).Error; err != nil {
+		return &models.Article{}, err
+	}
+
+	return &article, nil
+}
+
+func Delete(id int) (*models.Article, error) {
+	var article models.Article
+
+	if err := config.DB.Where("id = ?", id).Delete(&article).Error; err != nil {
 		return &models.Article{}, err
 	}
 
