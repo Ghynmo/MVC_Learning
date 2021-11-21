@@ -13,5 +13,6 @@ func NewRoutes() *echo.Echo {
 	echoInit.POST("/book", controllers.SaveBookController)
 	echoInit.PUT("/book/:id", controllers.UpdateBookbyIDController)
 	echoInit.DELETE("/book/:id", controllers.DeleteBookbyIDController)
+
 	return echoInit
 }

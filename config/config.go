@@ -8,6 +8,8 @@ import (
 
 var DB *gorm.DB
 
+const JWT_SECRET string = "testmvc"
+
 func InitDB() {
 	connectionString := "root@tcp(127.0.0.1:3306)/testgormDB?charset=utf8mb4&parseTime=True&loc=Local"
 

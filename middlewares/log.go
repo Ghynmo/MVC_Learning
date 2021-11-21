@@ -5,10 +5,9 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
-func logMiddlewareInit(e *echo.Echo) {
+func LogMiddlewareInit(e *echo.Echo) {
 	logger := middleware.LoggerConfig{
-		Format: `[${time_rfc3339}] ${status} ${method} ${host}
-		${path} ${latency_human}` + "\n",
+		Format: `[${status}] ${method} ${latency_human}` + "\n",
 	}
 	e.Use(middleware.LoggerWithConfig(logger))
 }
